@@ -29,7 +29,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/spots/:id', spots.get);
-app.get('/spots', spots.list);
+app.get('/spots', spots.all);
 app.post('/spots', spots.add);
 
 http.createServer(app).listen(app.get('port'), function() {
