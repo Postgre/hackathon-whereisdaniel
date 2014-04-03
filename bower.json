@@ -1,0 +1,23 @@
+{
+  "name": "whereisdaniel",
+  "version": "0.0.0",
+  "homepage": "https://github.com/nsn-wroclaw/hackaton-whereisdaniel",
+  "authors": [
+    "NetEng H@ckaton"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.15",
+    "bootstrap": "~3.1.1",
+    "angular-bootstrap": "~0.10.0",
+    "fontawesome": "~4.0.3"
+  }
+}
