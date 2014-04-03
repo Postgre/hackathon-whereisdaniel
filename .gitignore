@@ -23,3 +23,5 @@ local.properties
 proguard/
 
 platforms/
+
+server/node_modules/
