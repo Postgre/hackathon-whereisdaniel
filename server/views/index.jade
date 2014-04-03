@@ -1,5 +1,16 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .box-shadow
+    .box(ng-view)
+
+block scripts
+  script(src='libs/jquery/dist/jquery.js')
+  script(src='libs/angular/angular.js')
+  script(src='libs/angular-route/angular-route.min.js')
+  script(src='libs/underscore/underscore.js')
+  script(src='libs/bootstrap/dist/js/bootstrap.js')
+  
+  script(src='js/controllers.js')
+  script(src='js/factories.js')
+  script(src='js/app.js')

@@ -4,7 +4,13 @@ app.config(function($routeProvider) {
     
     $routeProvider.when('/', {
       controller: 'AppCtrl',
-      templateUrl: 'views/example.html'
+      templateUrl: 'views/base.html'
+    }).when('/ask', {
+      controller: 'AskCtrl',
+      templateUrl: 'views/ask.html'
+    }).when('/send', {
+      controller: 'SendCtrl',
+      templateUrl: 'views/send.html'
     });
 
   }
