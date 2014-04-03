@@ -24,4 +24,6 @@ proguard/
 
 platforms/
 
+server/public/libs/
 server/node_modules/
+www/libs/
