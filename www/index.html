@@ -28,19 +28,7 @@
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Where is Daniel?</h1>
-
-            <input ng-model="myModel">
-            <span>{{ myModel }}</span>
-
-            <div ng-view>
-            </div>
-
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Chomiczek</p>
-            </div>
+        <div ng-view>
         </div>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
