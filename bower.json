@@ -20,5 +20,8 @@
     "angular-route": "~1.2.15",
     "angular-bootstrap": "~0.10.0",
     "fontawesome": "~4.0.3"
+  },
+  "resolutions": {
+    "angular": "1.2.15"
   }
 }
