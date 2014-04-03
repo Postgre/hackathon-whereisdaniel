@@ -1,6 +1,5 @@
 var _ = require('underscore');
 
-
 var spotsCollection = {};
 
 var Spots = {

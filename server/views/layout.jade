@@ -1,7 +1,10 @@
 doctype html
-html
+html(lang='en', ng-app="myApp")
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='libs/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/base.css')
   body
     block content
+
+    block scripts
