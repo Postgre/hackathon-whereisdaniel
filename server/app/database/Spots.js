@@ -10,7 +10,7 @@ var Spots = {
   },
 
   get: function(username) {
-    return spotsCollection[username] ? spotsCollection[username] : [];
+    return spots.get({username : username});
   },
 
   all: function(username) {

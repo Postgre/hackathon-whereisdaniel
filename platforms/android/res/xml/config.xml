@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.nsn.whereisdaniel" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
@@ -10,11 +10,11 @@
     <feature name="WifiInformation">
         <param name="android-package" value="org.apache.cordova.wifiinformation.WifiAnalyzer" />
     </feature>
-    <name>Where is Daniel?</name>
+    <name>Where is Daniel</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Check where is your coworker.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
+    <author email="neteng-support@nsn.com" href="http://nsn.com">
         H@ckaton Team
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
