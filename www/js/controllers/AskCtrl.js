@@ -1,19 +1,29 @@
 function AskCtrl($scope, Spots) {
 
   $scope.user = {
-    username: 'Gosia'
+    username: 'Gosia',
+    spots: []
   }
+
+  $scope.status = '';
 
   $scope.addSpot = function(username) {
-    Spots.addSpot({
-      username: username
-    }, function() {
-      console.log('spot added');
+
+    var spot = {
+      username: username,
+      mac: ' 01:23:45:67:89:ab'
+    };
+
+    Spots.addSpot(spot, function() {
+      $scope.status = 'new spot added';
     });
-  }
+  };
 
   $scope.getSpots = function(username) {
-    Spots.getSpots(username);
-  }
+    Spots.getSpots(username, function(response) {
+      $scope.user.spots = response;
+      $scope.$apply();
+    });
+  };
 
 }

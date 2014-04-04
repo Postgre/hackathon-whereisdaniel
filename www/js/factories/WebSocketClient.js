@@ -14,9 +14,9 @@ app.factory('WebSocketClient', function($http) {
 
   connection.onmessage = function(message) {
     try {
-      console.log('reponse', message);
+      console.log('response', message.data);
       var data = JSON.parse(message.data);
-      callbacks[data.id](data.reponse);
+      callbacks[data.id](data.response);
       delete callbacks[data.id];
     } catch (e) {
       console.log('This doesn\'t look like a valid JSON: ', message.data);
