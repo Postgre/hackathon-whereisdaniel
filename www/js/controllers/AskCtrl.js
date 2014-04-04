@@ -12,4 +12,8 @@ function AskCtrl($scope, Spots) {
     });
   }
 
+  $scope.getSpots = function(username) {
+    Spots.getSpots(username);
+  }
+
 }

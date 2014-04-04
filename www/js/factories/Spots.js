@@ -14,6 +14,7 @@ app.factory('Spots', function($http) {
 
   connection.onmessage = function(message) {
     try {
+      console.log(message);
       var json = JSON.parse(message.data);
     } catch (e) {
       console.log('This doesn\'t look like a valid JSON: ', message.data);
@@ -22,7 +23,7 @@ app.factory('Spots', function($http) {
 
   return {
 
-    addSpot: function(spot, callback) {
+    addSpot: function(spot) {
       connection.send(JSON.stringify({
         path: '/spots',
         method: 'post',
@@ -30,8 +31,11 @@ app.factory('Spots', function($http) {
       }));
     },
 
-    getAllSpots: function() {
-      return [];
+    getSpots: function(username) {
+      return connection.send(JSON.stringify({
+        path: '/spots',
+        method: 'get'
+      }));
     }
 
   };
