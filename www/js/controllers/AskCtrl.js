@@ -16,6 +16,7 @@ function AskCtrl($scope, Spots) {
 
     Spots.addSpot(spot, function() {
       $scope.status = 'new spot added';
+      $scope.$apply();
     });
   };
 
