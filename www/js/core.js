@@ -34,13 +34,7 @@ var core = {
     // function, we must explicity call 'core.receivedEvent(...);'
     onDeviceReady: function() {
         core.receivedEvent('deviceready');
-        if (navigator.network.connection.type === Connection.WIFI) {
-            navigator.wifi.getNetworks(function(accessPoints) {
-                alert(JSON.stringify(accessPoints));
-            });
-        } else {
-            alert(navigator.network.connection.type);
-        }
+        angular.bootstrap(document, ['whereisdaniel-app']);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

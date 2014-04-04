@@ -40,7 +40,7 @@ public class WifiAnalyzer extends CordovaPlugin {
 	        	ap.put("SSID", scanResult.SSID);
 	        	ap.put("frequency", scanResult.frequency);
 	        	ap.put("level", scanResult.level);
-	        	ap.put("timestamp", String.valueOf(scanResult.timestamp));
+	        	//ap.put("timestamp", String.valueOf(scanResult.timestamp));
 	        	ap.put("capabilities", scanResult.capabilities);
 	        	available.put(ap);
 	        }

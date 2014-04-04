@@ -1,3 +1,6 @@
+window.onerror = function(error, url, line, column, typeError) {
+    alert(error);
+};
 var app = angular.module('whereisdaniel-app', ['ngRoute', 'ui.bootstrap']);
 
 app.config(function($routeProvider) {
@@ -11,6 +14,8 @@ app.config(function($routeProvider) {
   }).when('/send', {
     controller: 'SendCtrl',
     templateUrl: 'views/send.html'
+  }).when('/wifiInfo', {
+    controller: 'WifiInfoCtrl',
+    templateUrl: 'views/wifiInfo.html'
   });
-
 });
