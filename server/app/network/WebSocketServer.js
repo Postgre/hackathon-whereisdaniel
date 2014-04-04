@@ -37,6 +37,7 @@ WebSocketServer.prototype = {
   },
 
   onRequest: function(request) {
+    this.log('opening', 'connection');
     var connection = request.accept(null, request.origin);
     connection.on('message', this.onMessage.bind(this));
     connection.on('close', this.onClose.bind(this));
@@ -44,18 +45,22 @@ WebSocketServer.prototype = {
 
   onMessage: function(message) {
     if (message.type === 'utf8') {
-      console.log('DATA : ' + message.utf8Data);
+      this.log('data', message.utf8Data);
       var request = JSON.parse(message.utf8Data);
       this.callRoute(request.path, request.method, request.data, function(response) {
-        console.log('RESPONSE : ' + JSON.stringify(response));
-      });
+        this.log('response', response);
+      }.bind(this));
     } else {
-      console.log('ERROR : unsupported data type ' + message.type);
+      this.log('error', 'unsupported data type ' + message.type);
     }
   },
 
   onClose: function(connection) {
-    console.log('CLOSING CONNECTION');
+    this.log('closing', 'connection');
+  },
+
+  log: function(header, msg) {
+    console.log(header.toUpperCase(), ' : ', _.isString(msg) ? msg : JSON.stringify(msg));
   }
 
 };
