@@ -31,6 +31,25 @@ app.get('/spots/:id', spots.get);
 app.get('/spots', spots.all);
 app.post('/spots', spots.add);
 
-http.createServer(app).listen(app.get('port'), function() {
+var httpServer = http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
+});
+
+
+// Web sockets server
+var WebSocketServer = require('websocket').server;
+
+var websocketServer = new WebSocketServer({
+  httpServer: httpServer
+});
+
+websocketServer.on('request', function(request) {
+  var connection = request.accept(null, request.origin);
+  connection.on('message', function(message) {
+    if (message.type === 'utf8') {
+      console.log(message.utf8Data);
+    }
+  });
+
+  connection.on('close', function(connection) {});
 });
