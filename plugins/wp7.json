@@ -3,7 +3,29 @@
         "installed": [],
         "uninstalled": []
     },
-    "config_munge": {},
-    "installed_plugins": {},
+    "config_munge": {
+        "config.xml": {
+            "/*": {
+                "<feature name=\"NetworkStatus\"><param name=\"wp-package\" value=\"NetworkStatus\" /></feature>": 1,
+                "<feature name=\"Console\"><param name=\"wp-package\" value=\"DebugConsole\" /></feature>": 1
+            }
+        },
+        "Properties/WMAppManifest.xml": {
+            "/Deployment/App/Capabilities": {
+                "<Capability Name=\"ID_CAP_NETWORKING\" />": 1
+            }
+        }
+    },
+    "installed_plugins": {
+        "org.apache.cordova.network-information": {
+            "PACKAGE_NAME": "{30033D70-8141-4F85-9799-F454162038AD}"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "{30033D70-8141-4F85-9799-F454162038AD}"
+        },
+        "org.apache.cordova.wifi-information": {
+            "PACKAGE_NAME": "{30033D70-8141-4F85-9799-F454162038AD}"
+        }
+    },
     "dependent_plugins": {}
 }

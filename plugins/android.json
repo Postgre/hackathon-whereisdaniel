@@ -3,7 +3,32 @@
         "installed": [],
         "uninstalled": []
     },
-    "config_munge": {},
-    "installed_plugins": {},
+    "config_munge": {
+        "res/xml/config.xml": {
+            "/*": {
+                "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>": 1,
+                "<feature name=\"WifiInformation\"><param name=\"android-package\" value=\"org.apache.cordova.wifiinformation.WifiAnalyzer\" /></feature>": 1
+            },
+            "plugins": {}
+        },
+        "AndroidManifest.xml": {
+            "/*": {
+                "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />": 1,
+                "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />": 1
+            },
+            "/manifest": {}
+        }
+    },
+    "installed_plugins": {
+        "org.apache.cordova.network-information": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "org.apache.cordova.wifi-information": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
+        }
+    },
     "dependent_plugins": {}
 }

@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var app = {
+var core = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -31,9 +31,16 @@ var app = {
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
+    // function, we must explicity call 'core.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        core.receivedEvent('deviceready');
+        if (navigator.network.connection.type === Connection.WIFI) {
+            navigator.wifi.getNetworks(function(accessPoints) {
+                alert(JSON.stringify(accessPoints));
+            });
+        } else {
+            alert(navigator.network.connection.type);
+        }
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
