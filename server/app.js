@@ -3,6 +3,7 @@ var routes = require('./routes');
 var spots = require('./routes/spots');
 var http = require('http');
 var path = require('path');
+var WebSocketServer = require('./app/network/WebSocketServer');
 
 var app = express();
 
@@ -35,51 +36,5 @@ var httpServer = http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });
 
-// Web sockets server
-var WebSocketRouting = {
-
-  findRoute: function(path, method) {
-    return _.findWhere(app.routes[method.toLowerCase()], {
-      path: path
-    });
-  },
-
-  request: function(path, method, data, callback) {
-    var route = this.findRoute(path, method);
-    var routeCallback = _.first(route.callbacks);
-    var req = {
-      body: data
-    };
-    var res = {
-      send: function(response) {
-        callback(response);
-      }
-    };
-    routeCallback(req, res);
-  }
-};
-
-var WebSocketServer = require('websocket').server;
-var _ = require('underscore');
-
-var websocketServer = new WebSocketServer({
-  httpServer: httpServer
-});
-
-websocketServer.on('request', function(request) {
-
-  var connection = request.accept(null, request.origin);
-  connection.on('message', function(message) {
-    if (message.type === 'utf8') {
-      console.log('DATA : ' + message.utf8Data);
-      var request = JSON.parse(message.utf8Data);
-      WebSocketRouting.request(request.path, request.method, request.data, function(response) {
-        console.log('RESPONSE : ' + response);
-      });
-    } else {
-      console.log('ERROR : unsupported data type ' + message.type);
-    }
-  });
-
-  connection.on('close', function(connection) {});
-});
+var webSocketServer = new WebSocketServer(app);
+webSocketServer.start(httpServer);
