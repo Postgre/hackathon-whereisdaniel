@@ -12,6 +12,7 @@
     "less-middleware": "~0.2.1-beta",
     "underscore": "~1.6.0",
     "assert": "~1.1.1",
-    "websocket": "~1.0.8"
+    "websocket": "~1.0.8",
+    "mongojs": "^0.11.0"
   }
 }
