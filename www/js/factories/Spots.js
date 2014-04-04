@@ -24,8 +24,8 @@ app.factory('Spots', function($http) {
 
     addSpot: function(spot, callback) {
       connection.send(JSON.stringify({
-        collection: 'spots',
-        action: 'add',
+        path: '/spots',
+        method: 'post'
         data: spot
       }));
     },
