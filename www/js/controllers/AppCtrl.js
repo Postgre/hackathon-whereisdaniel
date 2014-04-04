@@ -1,5 +1,5 @@
 function AppCtrl($scope, Spots) {
   $scope.text = "blablabla";
 
-  $scope.propertyFromSpots = Spots.getProperty();
+  $scope.propertyFromSpots = Spots.getAllSpots();
 }

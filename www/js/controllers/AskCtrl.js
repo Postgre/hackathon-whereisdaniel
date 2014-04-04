@@ -1,13 +1,15 @@
-function AskCtrl($scope) {
+function AskCtrl($scope, Spots) {
 
   $scope.user = {
     username: 'Gosia'
   }
 
   $scope.addSpot = function(username) {
-
-    console.log('hello: ' + username);
-
+    Spots.addSpot({
+      username: username
+    }, function() {
+      console.log('spot added');
+    });
   }
 
 }
