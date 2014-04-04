@@ -1,0 +1,3045 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProductVersion>10.0.20506</ProductVersion>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ProjectGuid>{3677C1B7-D68B-4CF9-BF8A-E869D437A6DF}</ProjectGuid>
+        <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>com.phonegap.helloworld</RootNamespace>
+        <AssemblyName>com.phonegap.helloworld</AssemblyName>
+        <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+        <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+        <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+        <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+        <SilverlightApplication>true</SilverlightApplication>
+        <SupportedCultures>
+        </SupportedCultures>
+        <XapOutputs>true</XapOutputs>
+        <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+        <XapFilename>com.phonegap.helloworld.xap</XapFilename>
+        <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+        <SilverlightAppEntry>com.phonegap.helloworld.App</SilverlightAppEntry>
+        <ValidateXaml>true</ValidateXaml>
+        <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>Bin\Debug</OutputPath>
+        <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;WP7</DefineConstants>
+        <NoStdLib>true</NoStdLib>
+        <NoConfig>true</NoConfig>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>Bin\Release</OutputPath>
+        <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+        <NoStdLib>true</NoStdLib>
+        <NoConfig>true</NoConfig>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Microsoft.Devices.Sensors" />
+        <Reference Include="Microsoft.Phone" />
+        <Reference Include="Microsoft.Phone.Interop" />
+        <Reference Include="Microsoft.Xna.Framework" />
+        <Reference Include="System.Device" />
+        <Reference Include="System.Runtime.Serialization" />
+        <Reference Include="System.Servicemodel.Web" />
+        <Reference Include="System.Windows" />
+        <Reference Include="system" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Net" />
+        <Reference Include="System.Xml" />
+        <Reference Include="System.Xml.Linq" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="App.xaml.cs">
+            <DependentUpon>App.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="cordovalib\BaseCommand.cs" />
+        <Compile Include="cordovalib\BrowserMouseHelper.cs" />
+        <Compile Include="cordovalib\CommandFactory.cs" />
+        <Compile Include="cordovalib\ConfigHandler.cs" />
+        <Compile Include="cordovalib\ConsoleHelper.cs" />
+        <Compile Include="cordovalib\CordovaCommandCall.cs" />
+        <Compile Include="cordovalib\CordovaView.xaml.cs">
+            <DependentUpon>CordovaView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="cordovalib\DOMStorageHelper.cs" />
+        <Compile Include="cordovalib\IBrowserDecorator.cs" />
+        <Compile Include="cordovalib\ImageExifHelper.cs" />
+        <Compile Include="cordovalib\JSON\JsonHelper.cs" />
+        <Compile Include="cordovalib\NativeExecution.cs" />
+        <Compile Include="cordovalib\OrientationHelper.cs" />
+        <Compile Include="cordovalib\PluginResult.cs" />
+        <Compile Include="cordovalib\ScriptCallback.cs" />
+        <Compile Include="cordovalib\XHRHelper.cs" />
+        <Compile Include="cordovalib\MimeTypeMapper.cs" />
+        <Compile Include="MainPage.xaml.cs">
+            <DependentUpon>MainPage.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <ApplicationDefinition Include="App.xaml">
+            <SubType>Designer</SubType>
+            <Generator>MSBuild:Compile</Generator>
+        </ApplicationDefinition>
+        <Page Include="MainPage.xaml">
+            <SubType>Designer</SubType>
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Include="cordovalib\CordovaView.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <SubType>Designer</SubType>
+        </Page>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="config.xml" />
+        <Content Include="Images\appbar.back.rest.png" />
+        <Content Include="Images\appbar.close.rest.png" />
+        <Content Include="Images\appbar.feature.video.rest.png" />
+        <Content Include="Images\appbar.next.rest.png" />
+        <Content Include="Images\appbar.save.rest.png" />
+        <Content Include="Images\appbar.stop.rest.png" />
+        <None Include="cordova\lib\build.js" />
+        <None Include="cordova\lib\clean.js" />
+        <None Include="cordova\lib\deploy.js" />
+        <None Include="cordova\lib\log.js" />
+        <None Include="cordova\lib\target-list.js" />
+        <None Include="cordova\build.bat" />
+        <None Include="cordova\clean.bat" />
+        <None Include="cordova\lib\install-device.bat" />
+        <None Include="cordova\lib\install-emulator.bat" />
+        <None Include="cordova\lib\list-devices.bat" />
+        <None Include="cordova\lib\list-emulator-images.bat" />
+        <None Include="cordova\lib\list-started-emulators.bat" />
+        <None Include="cordova\lib\start-emulator.bat" />
+        <None Include="cordova\log.bat" />
+        <None Include="cordova\run.bat" />
+        <None Include="cordova\version.bat" />
+        <None Include="VERSION" />
+        <Content Include="CordovaSourceDictionary.xml">
+            <SubType>Designer</SubType>
+        </Content>
+        <None Include="BuildManifestProcessor.js" />
+        <None Include="Properties\AppManifest.xml">
+            <SubType>Designer</SubType>
+        </None>
+        <None Include="Properties\WMAppManifest.xml">
+            <SubType>Designer</SubType>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="ApplicationIcon.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Background.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="SplashScreenImage.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <WCFMetadata Include="Service References\" />
+    </ItemGroup>
+    <ItemGroup>
+        <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    </ItemGroup>
+    <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+    <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+    <ProjectExtensions />
+    <PropertyGroup>
+        <PreBuildEvent>CScript "$(ProjectDir)/BuildManifestProcessor.js" "$(ProjectPath)"</PreBuildEvent>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PostBuildEvent>
+        </PostBuildEvent>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="Plugins\org.apache.cordova.network-information\NetworkStatus.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Plugins\org.apache.cordova.console\DebugConsole.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\config.xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\cordova.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\cordova_plugins.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\css\index.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\icon.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\img\logo.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\app.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\controllers\AppCtrl.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\controllers\AskCtrl.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\controllers\SendCtrl.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\core.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\factories\Spots.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular\.bower.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular\angular-csp.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular\angular.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular\angular.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular\angular.min.js.gzip" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular\angular.min.js.map" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular\bower.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular\README.md" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular-bootstrap\.bower.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular-bootstrap\bower.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular-bootstrap\ui-bootstrap-tpls.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular-bootstrap\ui-bootstrap-tpls.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular-bootstrap\ui-bootstrap.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular-bootstrap\ui-bootstrap.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular-route\.bower.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular-route\angular-route.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular-route\angular-route.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular-route\angular-route.min.js.map" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular-route\bower.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\angular-route\README.md" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\.bower.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\bower.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\dist\css\bootstrap-theme.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\dist\css\bootstrap-theme.css.map" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\dist\css\bootstrap-theme.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\dist\css\bootstrap.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\dist\css\bootstrap.css.map" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\dist\css\bootstrap.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\dist\js\bootstrap.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\dist\js\bootstrap.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\grunt\bs-lessdoc-parser.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\grunt\bs-raw-files-generator.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\grunt\shrinkwrap.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\Gruntfile.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\js\affix.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\js\alert.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\js\button.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\js\carousel.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\js\collapse.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\js\dropdown.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\js\modal.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\js\popover.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\js\scrollspy.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\js\tab.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\js\tooltip.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\js\transition.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\alerts.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\badges.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\bootstrap.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\breadcrumbs.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\button-groups.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\buttons.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\carousel.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\close.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\code.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\component-animations.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\dropdowns.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\forms.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\glyphicons.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\grid.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\input-groups.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\jumbotron.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\labels.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\list-group.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\media.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\mixins.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\modals.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\navbar.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\navs.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\normalize.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\pager.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\pagination.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\panels.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\popovers.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\print.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\progress-bars.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\responsive-utilities.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\scaffolding.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\tables.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\theme.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\thumbnails.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\tooltip.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\type.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\utilities.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\variables.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\less\wells.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\LICENSE" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\package.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\README.md" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\test-infra\npm-shrinkwrap.canonical.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\test-infra\README.md" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\test-infra\requirements.txt" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\test-infra\s3_cache.py" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\test-infra\sauce_browsers.yml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\bootstrap\test-infra\uncached-npm-install.sh" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\.bower.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\.gitignore" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\component.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\composer.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\CONTRIBUTING.md" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\css\font-awesome.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\css\font-awesome.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\fonts\fontawesome-webfont.eot" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\fonts\fontawesome-webfont.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\fonts\fontawesome-webfont.ttf" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\fonts\fontawesome-webfont.woff" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\fonts\FontAwesome.otf" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\Gemfile" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\Gemfile.lock" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\less\bordered-pulled.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\less\core.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\less\extras.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\less\fixed-width.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\less\font-awesome.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\less\icons.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\less\larger.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\less\list.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\less\mixins.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\less\path.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\less\rotated-flipped.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\less\spinning.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\less\stacked.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\less\variables.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\package.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\README.md" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\scss\font-awesome.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\scss\_bordered-pulled.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\scss\_core.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\scss\_extras.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\scss\_fixed-width.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\scss\_icons.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\scss\_larger.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\scss\_list.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\scss\_mixins.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\scss\_path.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\scss\_rotated-flipped.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\scss\_spinning.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\scss\_stacked.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\scss\_variables.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\css\prettify.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\css\pygments.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\css\site.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\css\font-awesome-ie7.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\css\font-awesome-ie7.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\css\font-awesome.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\css\font-awesome.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\font\fontawesome-webfont.eot" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\font\fontawesome-webfont.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\font\fontawesome-webfont.ttf" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\font\fontawesome-webfont.woff" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\font\FontAwesome.otf" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\less\bootstrap.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\less\core.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\less\extras.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\less\font-awesome-ie7.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\less\font-awesome.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\less\icons.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\less\mixins.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\less\path.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\less\variables.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\scss\font-awesome-ie7.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\scss\font-awesome.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\scss\_bootstrap.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\scss\_core.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\scss\_extras.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\scss\_icons.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\scss\_mixins.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\scss\_path.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome\scss\_variables.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\font-awesome.zip" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\ico\favicon.ico" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\img\contribution-sample.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\img\fort_awesome.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\img\glyphicons-halflings-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\img\glyphicons-halflings.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\img\icon-flag.pdf" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\js\backbone.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\js\bootstrap-2.3.1.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\js\bootstrap-222.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\js\jquery-1.7.1.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\js\prettify.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\js\site.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\js\underscore.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\js\ZeroClipboard-1.1.7.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\js\ZeroClipboard-1.1.7.swf" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\accordion.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\alerts.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\bootstrap.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\breadcrumbs.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\button-groups.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\buttons.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\carousel.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\close.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\code.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\component-animations.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\dropdowns.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\forms.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\grid.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\hero-unit.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\labels-badges.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\layouts.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\media.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\mixins.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\modals.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\navbar.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\navs.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\pager.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\pagination.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\popovers.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\progress-bars.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\reset.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-1200px-min.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-767px-max.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-768px-979px.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-navbar.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-utilities.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\responsive.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\scaffolding.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\sprites.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\tables.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\thumbnails.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\tooltip.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\type.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\utilities.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\variables.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\bootstrap-2.3.2\wells.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\lazy.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\mixins.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\responsive-1200px-min.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\responsive-767px-max.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\responsive-768px-979px.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\responsive-navbar.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\responsive.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\site.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\sticky-footer.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\assets\less\variables.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\cheatsheet\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\CNAME" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\community\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\design.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\examples\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\get-started\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\adjust\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\adn\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\align-center\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\align-justify\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\align-left\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\align-right\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\ambulance\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\anchor\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\android\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\angle-down\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\angle-left\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\angle-right\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\angle-up\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\apple\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\archive\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\arrow-down\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\arrow-left\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\arrow-right\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\arrow-up\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\asterisk\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\backward\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\ban-circle\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\bar-chart\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\barcode\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\beaker\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\beer\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\bell\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\bell-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\bitbucket\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\bitbucket-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\bold\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\bolt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\book\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\bookmark\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\bookmark-empty\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\briefcase\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\btc\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\bug\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\building\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\bullhorn\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\bullseye\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\calendar\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\calendar-empty\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\camera\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\camera-retro\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\caret-down\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\caret-left\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\caret-right\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\caret-up\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\certificate\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\check\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\check-empty\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\check-minus\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\check-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\chevron-down\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\chevron-left\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\chevron-right\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\chevron-sign-down\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\chevron-sign-left\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\chevron-sign-right\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\chevron-sign-up\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\chevron-up\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\circle\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\circle-arrow-down\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\circle-arrow-left\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\circle-arrow-right\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\circle-arrow-up\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\circle-blank\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\cloud\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\cloud-download\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\cloud-upload\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\cny\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\code\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\code-fork\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\coffee\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\cog\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\cogs\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\collapse\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\collapse-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\collapse-top\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\columns\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\comment\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\comment-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\comments\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\comments-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\compass\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\copy\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\credit-card\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\crop\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\css3\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\cut\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\dashboard\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\desktop\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\double-angle-down\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\double-angle-left\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\double-angle-right\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\double-angle-up\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\download\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\download-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\dribbble\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\dropbox\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\edit\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\edit-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\eject\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\ellipsis-horizontal\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\ellipsis-vertical\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\envelope\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\envelope-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\eraser\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\eur\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\exchange\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\exclamation\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\exclamation-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\expand\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\expand-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\external-link\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\external-link-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\eye-close\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\eye-open\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\facebook\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\facebook-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\facetime-video\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\fast-backward\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\fast-forward\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\female\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\fighter-jet\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\file\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\file-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\file-text\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\file-text-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\film\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\filter\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\fire\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\fire-extinguisher\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\flag\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\flag-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\flag-checkered\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\flickr\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\folder-close\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\folder-close-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\folder-open\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\folder-open-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\font\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\food\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\forward\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\foursquare\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\frown\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\fullscreen\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\gamepad\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\gbp\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\gift\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\github\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\github-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\github-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\gittip\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\glass\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\globe\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\google-plus\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\google-plus-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\group\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\h-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\hand-down\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\hand-left\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\hand-right\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\hand-up\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\hdd\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\headphones\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\heart\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\heart-empty\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\home\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\hospital\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\html5\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\inbox\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\indent-left\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\indent-right\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\info\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\info-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\inr\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\instagram\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\italic\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\jpy\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\key\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\keyboard\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\krw\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\laptop\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\leaf\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\legal\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\lemon\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\level-down\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\level-up\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\lightbulb\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\link\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\linkedin\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\linkedin-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\linux\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\list\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\list-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\list-ol\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\list-ul\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\location-arrow\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\lock\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\long-arrow-down\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\long-arrow-left\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\long-arrow-right\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\long-arrow-up\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\magic\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\magnet\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\mail-reply-all\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\male\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\map-marker\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\maxcdn\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\medkit\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\meh\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\microphone\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\microphone-off\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\minus\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\minus-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\minus-sign-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\mobile-phone\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\money\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\moon\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\move\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\music\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\off\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\ok\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\ok-circle\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\ok-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\paper-clip\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\paste\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\pause\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\pencil\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\phone\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\phone-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\picture\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\pinterest\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\pinterest-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\plane\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\play\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\play-circle\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\play-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\plus\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\plus-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\plus-sign-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\print\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\pushpin\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\puzzle-piece\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\qrcode\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\question\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\question-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\quote-left\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\quote-right\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\random\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\refresh\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\remove\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\remove-circle\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\remove-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\renren\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\reorder\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\repeat\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\reply\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\reply-all\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\resize-full\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\resize-horizontal\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\resize-small\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\resize-vertical\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\retweet\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\road\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\rocket\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\rss\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\rss-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\save\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\screenshot\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\search\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\share\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\share-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\share-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\shield\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\shopping-cart\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\sign-blank\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\signal\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\signin\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\signout\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\sitemap\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\skype\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\smile\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\sort\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\sort-by-alphabet\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\sort-by-alphabet-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\sort-by-attributes\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\sort-by-attributes-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\sort-by-order\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\sort-by-order-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\sort-down\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\sort-up\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\spinner\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\stackexchange\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\star\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\star-empty\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\star-half\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\star-half-empty\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\step-backward\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\step-forward\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\stethoscope\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\stop\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\strikethrough\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\subscript\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\suitcase\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\sun\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\superscript\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\table\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\tablet\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\tag\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\tags\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\tasks\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\terminal\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\text-height\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\text-width\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\th\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\th-large\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\th-list\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\thumbs-down\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\thumbs-down-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\thumbs-up\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\thumbs-up-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\ticket\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\time\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\tint\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\trash\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\trello\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\trophy\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\truck\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\tumblr\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\tumblr-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\twitter\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\twitter-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\umbrella\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\underline\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\undo\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\unlink\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\unlock\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\unlock-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\upload\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\upload-alt\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\usd\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\user\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\user-md\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\vk\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\volume-down\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\volume-off\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\volume-up\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\warning-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\weibo\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\windows\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\wrench\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\xing\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\xing-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\youtube\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\youtube-play\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\youtube-sign\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\zoom-in\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icon\zoom-out\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icons\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\icons.yml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\license\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\Makefile" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\test\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\3.2.1\whats-new\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\css\prettify.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\css\pygments.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\fonts\FontAwesome.otf" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\less\bordered-pulled.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\less\core.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\less\fixed-width.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\less\font-awesome.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\less\icons.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\less\larger.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\less\list.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\less\mixins.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\less\path.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\less\rotated-flipped.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\less\spinning.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\less\stacked.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\less\variables.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\scss\font-awesome.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\scss\_bordered-pulled.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\scss\_core.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\scss\_fixed-width.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\scss\_icons.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\scss\_larger.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\scss\_list.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\scss\_mixins.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\scss\_path.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\scss\_rotated-flipped.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\scss\_spinning.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\scss\_stacked.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\font-awesome\scss\_variables.scss" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\ico\favicon.ico" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\js\backbone.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\js\bootstrap-2.3.1.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\js\bootstrap-222.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\js\bootstrap-3.0.0.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\js\html5shiv.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\js\jquery-1.10.2.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\js\jquery-1.10.2.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\js\jquery-1.10.2.min.map" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\js\jquery-1.7.1.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\js\prettify.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\js\respond.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\js\site.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\js\underscore.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\js\ZeroClipboard-1.1.7.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\js\ZeroClipboard-1.1.7.swf" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\alerts.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\badges.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\bootstrap.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\breadcrumbs.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\button-groups.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\buttons.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\carousel.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\close.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\code.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\component-animations.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\dropdowns.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\forms.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\glyphicons.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\grid.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\input-groups.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\jumbotron.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\labels.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\list-group.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\media.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\mixins.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\modals.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\navbar.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\navs.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\normalize.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\pager.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\pagination.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\panels.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\popovers.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\print.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\progress-bars.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\responsive-utilities.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\scaffolding.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\tables.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\theme.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\thumbnails.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\tooltip.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\type.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\utilities.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\variables.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\bootstrap-3.0.0\wells.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\bootstrap\buttons.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\bootstrap\jumbotron.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\bootstrap\navbar.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\bootstrap\type.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\bootstrap\variables.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\bootstrap\wells.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\carbonad.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\example-rating.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\feature-list.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\fontawesome-icon-list.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\footer.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\jumbotron-carousel.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\layout.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\lazy.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\responsive\screen-lg.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\responsive\screen-md.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\responsive\screen-sm.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\responsive\screen-xs.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\social-buttons.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\stripe-ad.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site\textured-bg.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\assets\less\site.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\cheatsheet.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\CNAME" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\community.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\design.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\examples.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\get-started.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\glyphicons-test.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\icons.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\icons.yml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\license.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\Makefile" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\test-2.3.2.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\test.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\whats-new.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\ads\carbon-dark-vertical.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\ads\carbon-light-horizontal.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\ads\carbon-light-vertical.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\brand-license.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\community\getting-support.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\community\project-milestones.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\community\reporting-bugs.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\community\requesting-new-icons.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\community\submitting-pull-requests.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\examples\bootstrap.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\examples\bordered-pulled.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\examples\custom.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\examples\fixed-width.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\examples\inline.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\examples\larger.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\examples\list.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\examples\rotated-flipped.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\examples\spinning.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\examples\stacked.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\footer.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\icons\brand.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\icons\currency.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\icons\directional.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\icons\form-control.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\icons\medical.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\icons\new.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\icons\text-editor.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\icons\video-player.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\icons\web-application.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\jumbotron-carousel.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\jumbotron.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\license-code.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\navbar.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\new-features.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\new-naming.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\new-upgrading.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\stripe-ad.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\stripe-social.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\tell-me-thanks.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\tests\rotated-flipped-inside-anchor.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\tests\rotated-flipped-inside-btn.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\tests\rotated-flipped.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\tests\stacked-inside-anchor.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\tests\stacked.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\thanks-to.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_includes\why.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_layouts\base.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_layouts\icon.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_plugins\icon_page_generator.rb" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\src\_plugins\site.rb" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\fontawesome\_config.yml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\.bower.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\bower.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\dist\jquery.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\dist\jquery.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\dist\jquery.min.map" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\MIT-LICENSE.txt" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\ajax\jsonp.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\ajax\load.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\ajax\parseJSON.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\ajax\parseXML.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\ajax\script.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\ajax\var\nonce.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\ajax\var\rquery.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\ajax\xhr.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\ajax.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\attributes\attr.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\attributes\classes.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\attributes\prop.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\attributes\support.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\attributes\val.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\attributes.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\callbacks.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\core\access.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\core\init.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\core\parseHTML.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\core\ready.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\core\var\rsingleTag.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\core.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\css\addGetHookIf.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\css\curCSS.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\css\defaultDisplay.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\css\hiddenVisibleSelectors.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\css\support.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\css\swap.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\css\var\cssExpand.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\css\var\getStyles.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\css\var\isHidden.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\css\var\rmargin.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\css\var\rnumnonpx.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\css.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\data\accepts.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\data\Data.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\data\var\data_priv.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\data\var\data_user.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\data.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\deferred.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\deprecated.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\dimensions.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\effects\animatedSelector.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\effects\Tween.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\effects.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\event\alias.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\event\support.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\event.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\exports\amd.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\exports\global.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\intro.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\jquery.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\manipulation\support.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\manipulation\var\rcheckableType.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\manipulation\_evalUrl.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\manipulation.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\offset.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\outro.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\queue\delay.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\queue.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\selector-native.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\selector-sizzle.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\selector.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\serialize.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\sizzle\dist\sizzle.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\sizzle\dist\sizzle.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\sizzle\dist\sizzle.min.map" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\traversing\findFilter.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\traversing\var\rneedsContext.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\traversing.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\var\arr.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\var\class2type.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\var\concat.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\var\hasOwn.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\var\indexOf.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\var\pnum.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\var\push.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\var\rnotwhite.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\var\slice.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\var\strundefined.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\var\support.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\var\toString.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\libs\jquery\src\wrap.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\phonegap.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\plugins\org.apache.cordova.console\www\console-via-logger.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\plugins\org.apache.cordova.console\www\logger.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\plugins\org.apache.cordova.network-information\www\Connection.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\plugins\org.apache.cordova.network-information\www\network.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\plugins\org.apache.cordova.wifi-information\www\analyzer.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\android\icon-36-ldpi.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\android\icon-48-mdpi.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\android\icon-72-hdpi.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\android\icon-96-xhdpi.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\bada\icon-128.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\bada-wac\icon-48-type5.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\bada-wac\icon-50-type3.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\bada-wac\icon-80-type4.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\blackberry\icon-80.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\ios\icon-57-2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\ios\icon-57.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\ios\icon-72-2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\ios\icon-72.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\tizen\icon-128.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\webos\icon-64.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\windows-phone\icon-173-tile.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\windows-phone\icon-48.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\windows-phone\icon-62-tile.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\android\screen-hdpi-landscape.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\android\screen-hdpi-portrait.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\android\screen-ldpi-landscape.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\android\screen-ldpi-portrait.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\android\screen-mdpi-landscape.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\android\screen-mdpi-portrait.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\android\screen-xhdpi-landscape.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\android\screen-xhdpi-portrait.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\bada\screen-portrait.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\bada-wac\screen-type3.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\bada-wac\screen-type4.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\bada-wac\screen-type5.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\blackberry\screen-225.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-ipad-landscape-2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-ipad-landscape.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-ipad-portrait-2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-ipad-portrait.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-iphone-landscape-2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-iphone-landscape.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-iphone-portrait-2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-iphone-portrait-568h-2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-iphone-portrait.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\tizen\README.md" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\webos\screen-64.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\windows-phone\screen-portrait.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\spec\helper.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\spec\index.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\spec\lib\jasmine-1.2.0\jasmine-html.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\spec\lib\jasmine-1.2.0\jasmine.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\spec\lib\jasmine-1.2.0\jasmine.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\spec\lib\jasmine-1.2.0\MIT.LICENSE" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\spec.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\views\ask.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\views\base.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\views\send.html" />
+    </ItemGroup>
+</Project>

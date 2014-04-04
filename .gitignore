@@ -20,7 +20,6 @@ platforms/wp7/www
 
 # Generated files
 CordovaSourceDictionary.xml
-platforms/wp7/*.csproj
 platforms/wp7/config.xml
 
 # Gradle files
