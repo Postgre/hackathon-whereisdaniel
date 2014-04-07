@@ -67,7 +67,13 @@ body {
 .navigation-buttons {
     padding:180px 0px 0px 0px;
 }
-
+.input-name {
+    width: 100%;
+    margin-left:2em;
+}
+.send-button {
+    margin-left:1em;
+}
 .connection-status {
     padding-top:10px;
 
