@@ -24,17 +24,8 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#CCFFFF;
-    background-image:linear-gradient(top, #99CCFF 0%, #CCFFFF 51%);
-    background-image:-webkit-linear-gradient(top, #99CCFF 0%, #CCFFFF 51%);
-    background-image:-ms-linear-gradient(top, #99CCFF 0%, #CCFFFF 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #99CCFF),
-        color-stop(0.51, #CCFFFF)
-    );
+    background-image:url('../img/skulls.png');
+    background-repeat:repeat;
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
@@ -153,4 +144,8 @@ input{
 span.input-group-addon.btn{
     border-radius: 0 !important;
     width: 65px;
+}
+
+.main-view {
+    padding-top: 1em;
 }
