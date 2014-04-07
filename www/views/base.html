@@ -1,6 +1,6 @@
 <div class="app">
   <div class="row">
-    <div class="col-md-1">
+    <div class="col-xs-12">
       <img src="img/logo.png" width="80" height="80" pull-left />
        <span class="app-title">Where is Daniel?</span>
     </div>
@@ -13,12 +13,20 @@
     </div>
   </div>
 
+  <div class="row connection-status">
+    <div class="col-xs-7">
+        <input class="input-lg input-name" type="text" ng-model="yourName" placeholder="Enter a name here">
+      </div>
+      <div class="col-xs-4 send-button">
+          <a href="#send" type="button" class="btn btn-primary btn-lg btn-block" ng-click="send(yourName)">Send</a>
+        </div>
+      </div>
+	  <br />
+    <br />
+
   <div class="navigation-buttons">
-	  <div class="btn-group">
-	    <a href="#send" type="button" class="btn btn-primary btn-lg">Send</a>
-	    <a href="#ask" type="button" class="btn btn-info btn-lg">Ask</a>
-	    <a href="#wifiInfo" type="button" class="btn btn-info btn-lg">WifiInfo</a>
-	  </div>
+	    <a href="#ask" type="button" class="btn btn-info btn-lg btn-block">Ask</a>
+	    <a href="#wifiInfo" type="button" class="btn btn-info btn-lg btn-block">WifiInfo</a>
   </div>
 	  
 </div>
