@@ -10,6 +10,9 @@
     <feature name="WifiInformation">
         <param name="android-package" value="org.apache.cordova.wifiinformation.WifiAnalyzer" />
     </feature>
+    <feature name="WebSocket">
+        <param name="android-package" value="com.ququplay.websocket.WebSocket" />
+    </feature>
     <name>Where is Daniel</name>
     <description>
         Check where is your coworker.

@@ -1,8 +1,8 @@
 app.factory('WebSocketClient', function($http) {
 
-  var WebSocket = window.WebSocket || window.MozWebSocket;
+  var WebSocket = WebSocket || window.WebSocket || window.MozWebSocket;
 
-  var connection = new WebSocket('ws://localhost:3001');
+  var connection = new WebSocket('ws://antivps.pl:3001');
 
   connection.onopen = function() {
     console.log('connection opened');

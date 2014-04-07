@@ -7,7 +7,8 @@
         "res/xml/config.xml": {
             "/*": {
                 "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>": 1,
-                "<feature name=\"WifiInformation\"><param name=\"android-package\" value=\"org.apache.cordova.wifiinformation.WifiAnalyzer\" /></feature>": 1
+                "<feature name=\"WifiInformation\"><param name=\"android-package\" value=\"org.apache.cordova.wifiinformation.WifiAnalyzer\" /></feature>": 1,
+                "<feature name=\"WebSocket\"><param name=\"android-package\" value=\"com.ququplay.websocket.WebSocket\" /></feature>": 1
             },
             "plugins": {}
         },
@@ -29,6 +30,9 @@
             "PACKAGE_NAME": "com.phonegap.helloworld"
         },
         "org.apache.cordova.wifi-information": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "com.ququplay.websocket.WebSocket": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
         }
     },
