@@ -18,9 +18,13 @@ WebSocketConnection.prototype = {
     if (message.type === 'utf8') {
       this.server.log('data', message.utf8Data);
       var request = JSON.parse(message.utf8Data);
+      this.server.log('json-data', request);
       this.callRoute(request.path, request.method, request.data || {}, request.parameters || [], function(response) {
         this.server.log('response', response);
-        this.connection.send(_.isString(response) ? response : JSON.stringify(response));
+        this.connection.send(JSON.stringify({
+          id: request.id,
+          response: response
+        }));
       }.bind(this));
     } else {
       this.server.log('error', 'unsupported data type ' + message.type);

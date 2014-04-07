@@ -129,3 +129,28 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+table{
+    font-size: 18px;
+    color: rgb(85, 85, 85);
+
+}
+
+
+table th{
+    font-weight: normal;
+    
+}
+.status{
+    text-align: center;
+}
+.mactable{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+input{
+    border-radius: 0 !important;
+}
+span.input-group-addon.btn{
+    border-radius: 0 !important;
+    width: 65px;
+}

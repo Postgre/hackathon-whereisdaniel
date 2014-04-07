@@ -10,7 +10,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <keywords>cordova,wifi,information</keywords>
 
     <js-module src="www/analyzer.js" name="analyzer">
-		<clobbers target="navigator.wifi" />
+		<clobbers target="navigator.wifi"/>
 	</js-module>
 
     <!-- android -->
@@ -22,10 +22,12 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/*">
-            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+            <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+            <uses-permission android:name="android.permission.WAKE_LOCK"/>
         </config-file>
 
-        <source-file src="src/android/WifiAnalyzer.java" target-dir="src/org/apache/cordova/wifiinformation" />
+        <source-file src="src/android/WifiAnalyzer.java" target-dir="src/org/apache/cordova/wifiinformation"/>
 
     </platform>
 

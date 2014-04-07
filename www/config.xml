@@ -3,16 +3,16 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.helloworld"
+        id        = "com.nsn.whereisdaniel"
         version   = "1.0.0">
 
-    <name>Where is Daniel?</name>
+    <name>Where is Daniel</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Check where is your coworker.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
+    <author href="http://nsn.com" email="neteng-support@nsn.com">
         H@ckaton Team
     </author>
 
