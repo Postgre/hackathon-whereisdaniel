@@ -6,7 +6,7 @@ exports.all = function(req, res) {
 
 exports.get = function(req, res) {
   res.send(
-    Spots.get(req.params.username)
+    Spots.get(req.params.id)
   );
 };
 

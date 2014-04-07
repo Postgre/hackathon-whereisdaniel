@@ -8,6 +8,13 @@ app.factory('Spots', function($http, WebSocketClient) {
 
     getSpots: function(username, callback) {
       WebSocketClient.get('/spots', callback);
+    },
+
+    getSpot: function(username, callback) {
+      WebSocketClient.get('/spots/:id', {
+          id: username
+        },
+        callback);
     }
 
   };

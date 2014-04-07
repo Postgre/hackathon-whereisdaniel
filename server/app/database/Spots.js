@@ -10,7 +10,8 @@ var Spots = {
   },
 
   get: function(username) {
-    return spots.get({username : username});
+    console.log(spotsCollection);
+    return spotsCollection[username];
   },
 
   all: function(username) {

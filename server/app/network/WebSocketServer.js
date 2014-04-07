@@ -19,7 +19,7 @@ WebSocketConnection.prototype = {
       this.server.log('data', message.utf8Data);
       var request = JSON.parse(message.utf8Data);
       this.server.log('json-data', request);
-      this.callRoute(request.path, request.method, request.data || {}, request.parameters || [], function(response) {
+      this.callRoute(request.path, request.method, request.data || {}, request.parameters || {}, function(response) {
         this.server.log('response', response);
         this.connection.send(JSON.stringify({
           id: request.id,
@@ -46,7 +46,7 @@ WebSocketConnection.prototype = {
     var routeCallback = _.first(route.callbacks);
     var req = {
       body: data,
-      parameters: parameters
+      params: parameters
     };
     var res = {
       send: function(response) {

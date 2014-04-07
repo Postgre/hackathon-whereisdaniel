@@ -35,20 +35,25 @@ app.factory('WebSocketClient', function($http) {
       return callbackId;
     },
 
-    get: function(path, callback) {
-      this._send(path, 'get', {}, callback);
+    get: function(path, parameters, callback) {
+      this._send(path, 'get', {}, parameters, callback);
     },
 
-    post: function(path, data, callback) {
-      this._send(path, 'post', data, callback);
+    post: function(path, data, parameters, callback) {
+      this._send(path, 'post', data, parameters, callback);
     },
 
-    _send: function(path, method, data, callback) {
+    _send: function(path, method, data, parameters, callback) {
+      if (typeof(parameters) == "function") {
+        callback = parameters;
+        parameters = {};
+      }
       connection.send(JSON.stringify({
         id: this._registerCallback(callback),
         path: path,
         method: method,
-        data: data
+        data: data,
+        parameters: parameters
       }));
     }
   };
