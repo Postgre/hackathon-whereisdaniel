@@ -13,4 +13,6 @@ In main project directory run:
 
 > android update project --path platforms/android/CordovaLib
 
+Have fun!
+
 ------------------
